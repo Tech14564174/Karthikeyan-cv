@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Karthikeyan | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Moving colour blobs in the background -->
+  <div class="blob blob1"></div>
+  <div class="blob blob2"></div>
+  <div class="blob blob3"></div>
+
+  <!-- ===== MENU ===== -->
+  <div class="nav">
+    <a class="logo" href="#home">Karthikeyan.</a>
+    <div class="links">
+      <a href="#about">About</a>
+      <a href="#education">Education</a>
+      <a href="#experience">Experience</a>
+      
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+
+  <!-- ===== HOME ===== -->
+  <div class="section hero" id="home">
+    <p class="hello">Hi, I am</p>
+    <h1 class="name">Karthikeyan kandepi</h1>
+    <p class="typing">I am into <span id="typed"></span><span class="cursor">|</span></p>
+    <p class="lead">BBA (DBE) student at IIM Bangalore, pursuing CA Intermediate, aspiring to build a career in investment banking and corporate finance</p>
+    <div class="actions">
+      <a class="btn pink" href="#contact">Get in touch</a>
+      <a class="btn outline" href="#about">More about me</a>
+    </div>
+  </div>
+
+  <!-- ===== ABOUT ===== -->
+  <div class="section" id="about">
+    <h2>About me</h2>
+    <p>I am studying BBA (DBE) at IIM Bangalore alongside CA Intermediate. I am interested in investment banking, corporate finance, and financial analysis, and plan to build a career in global finance.</p>
+    <p>Alongside my studies, I develop my financial knowledge, follow market trends, play pickleball and gym</p>
+    <div class="tags">
+      <span class="tag t1">finance</span>
+      <span class="tag t2">entrepreneurship</span>
+      <span class="tag t3">stocks</span>
+      <span class="tag t4">investment banking</span>
+    </div>
+  </div>
+
+  <!-- ===== EDUCATION ===== -->
+  <div class="section" id="education">
+    <h2>Education</h2>
+    <div class="cards">
+      <div class="card c1">
+        <span class="small">Current</span>
+        <h3>BBA (DBE)</h3>
+        <p>IIM Bangalore</p>
+        <span class="badge">Ongoing</span>
+      </div>
+      <div class="card c2">
+        <span class="small">Current</span>
+        <h3>CA inter</h3>
+        <p> ICAI </p>
+        <span class="badge">Ongoing</span>
+      </div>
+      <div class="card c3">
+        <span class="small">Class XII</span>
+        <h3>SR JUNIOR COLLEGE</h3>
+        <p>Secondary</p>
+        <span class="badge">83%</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== EXPERIENCE ===== -->
+  <div class="section" id="experience">
+    <h2>Experience and leadership</h2>
+    <div class="cards">
+      <div class="card c4">
+        <span class="small">2023-25</span>
+        <h3>SR JUNIOR</h3>
+        <p class="role">Head of the Organising Committee</p>
+        <p>Led a team to plan, coordinate, and successfully organise the College annual fest, overseeing event execution and team management.</p>
+      </div>
+    
+  <div class="card c2">
+  <span class="small">In progress</span>
+  <h3>McKinsey Forward Program</h3>
+  <p class="role">Participant</p>
+  <p>Building skills in problem solving, structured thinking and professional communication.</p>
+</div>
+    </div>
+  </div>
+
+  
+
+  <!-- ===== SKILLS ===== -->
+  <div class="section" id="skills">
+    <h2>Skills and strengths</h2>
+    <div class="skills">
+      <div class="skill s1"><strong>Leadership</strong><span>Demonstrated strong leadership by organising events, coordinating teams, and taking responsibility to achieve goals successfully.</span></div>
+      <div class="skill s2"><strong>Problem Solving</strong><span>Strong problem-solving skills with the ability to analyse challenges, think critically, and develop practical solutions efficiently.</span></div>
+      <div class="skill s3"><strong>Critical Thinking</strong><span>Evaluates information logically to make informed decisions</span></div>
+      
+    </div>
+  </div>
+
+  <!-- ===== CONTACT ===== -->
+  <div class="section" id="contact">
+    <h2>Let's talk</h2>
+    <p>I am looking for opportunities in Finance where I can contribute and learn.</p>
+    <div class="actions">
+      <a class="btn pink" href="mailto:kandepisrikarthikeyan@gmail.com">kandepisrikarthikeyan@gmail.com</a>
+      <a class="btn outline" href="https://www.linkedin.com/in/kandepi-sri-karthikeyan-645182401">LinkedIn</a>
+      
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>© 2026 Karthik. Built with HTML, CSS and a little JavaScript.</p>
+    <a href="#home">Back to top</a>
+  </div>
+
+  <!-- Script: types the words in the home section one by one -->
+  <script>
+    var words = ["Finance", "Stocks", "Investment Banking"];
+    var wordNumber = 0;
+    var letterNumber = 0;
+    var deleting = false;
+    var typed = document.getElementById("typed");
+
+    function type() {
+      var word = words[wordNumber];
+
+      if (deleting == false) {
+        letterNumber = letterNumber + 1;
+      } else {
+        letterNumber = letterNumber - 1;
+      }
+
+      typed.textContent = word.substring(0, letterNumber);
+
+      var speed = 90;
+
+      if (deleting == false && letterNumber == word.length) {
+        deleting = true;
+        speed = 1400;
+      } else if (deleting == true && letterNumber == 0) {
+        deleting = false;
+        wordNumber = (wordNumber + 1) % words.length;
+        speed = 400;
+      }
+
+      setTimeout(type, speed);
+    }
+
+    type();
+  </script>
+
+</body>
+</html>

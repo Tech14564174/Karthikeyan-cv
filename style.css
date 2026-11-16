@@ -1,0 +1,171 @@
+
+   Background  #1b1030 
+   Pink        #ff6b9d
+   Orange      #ffa94d
+   Mint        #4be3b0
+   Lilac       #b794f6
+   Text        #f4efff
+
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+
+body {
+  margin: 0;
+  background-color: #1b1030;
+  color: #f4efff;
+  font-family: "DM Sans", Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+
+h1, h2, h3 { font-family: Syne, Arial, sans-serif; margin: 0 0 8px 0; line-height: 1.1; }
+h2 { font-size: 40px; margin-bottom: 24px; }
+h3 { font-size: 20px; }
+p { max-width: 62ch; margin: 0 0 16px 0; }
+a { color: #4be3b0; }
+
+
+.blob {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.45;
+  z-index: -1;
+}
+.blob1 { width: 420px; height: 420px; background: #ff6b9d; top: -80px; left: -80px; animation: float1 14s ease-in-out infinite; }
+.blob2 { width: 380px; height: 380px; background: #4be3b0; bottom: -100px; right: -60px; animation: float2 17s ease-in-out infinite; }
+.blob3 { width: 320px; height: 320px; background: #b794f6; top: 40%; left: 45%; animation: float3 20s ease-in-out infinite; }
+
+@keyframes float1 { 0% { transform: translate(0, 0); } 50% { transform: translate(300px, 220px); } 100% { transform: translate(0, 0); } }
+@keyframes float2 { 0% { transform: translate(0, 0); } 50% { transform: translate(-280px, -200px); } 100% { transform: translate(0, 0); } }
+@keyframes float3 { 0% { transform: translate(0, 0); } 50% { transform: translate(-200px, 160px); } 100% { transform: translate(0, 0); } }
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  padding: 14px 24px;
+  background-color: rgba(27, 16, 48, 0.75);
+  backdrop-filter: blur(10px);
+}
+.logo { font-family: Syne, Arial, sans-serif; font-weight: 800; font-size: 22px; color: #ff6b9d; text-decoration: none; }
+.links { display: flex; flex-wrap: wrap; gap: 18px; }
+.links a { color: #f4efff; text-decoration: none; }
+.links a:hover { color: #ffa94d; }
+
+
+.section { max-width: 980px; margin: 0 auto; padding: 80px 24px 10px 24px; }
+
+
+.hero { min-height: 88vh; display: flex; flex-direction: column; justify-content: center; }
+.hello { font-size: 20px; color: #ffa94d; margin: 0; }
+
+
+.name {
+  font-size: clamp(44px, 9vw, 110px);
+  font-weight: 700;
+  line-height: 1.1;
+  padding-right: 0.15em;
+  padding-bottom: 0.1em;
+  background: linear-gradient(90deg, #ff6b9d, #ffa94d, #4be3b0, #b794f6, #ff6b9d);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: colours 8s linear infinite;
+}
+@keyframes colours { 0% { background-position: 0% 0; } 100% { background-position: 300% 0; } }
+
+.typing { font-size: 26px; font-family: Syne, Arial, sans-serif; margin-bottom: 8px; }
+#typed { color: #4be3b0; }
+.cursor { color: #ffa94d; animation: blink 0.8s steps(1) infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+
+.lead { color: #cdbfe8; font-size: 19px; }
+
+/* =============== BUTTONS =============== */
+.actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px; }
+.btn { display: inline-block; padding: 12px 24px; border-radius: 999px; text-decoration: none; font-weight: 500; transition: transform 0.2s; }
+.btn:hover { transform: translateY(-4px) rotate(-1.5deg); }
+.pink { background: linear-gradient(90deg, #ff6b9d, #ffa94d); color: #1b1030; }
+.outline { border: 2px solid #b794f6; color: #f4efff; }
+.outline:hover { background-color: #b794f6; color: #1b1030; }
+
+/* =============== TAGS AND BADGES =============== */
+.tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+.tag { padding: 6px 16px; border-radius: 999px; color: #1b1030; font-weight: 500; }
+.t1 { background: #ff6b9d; }
+.t2 { background: #ffa94d; }
+.t3 { background: #4be3b0; }
+.t4 { background: #b794f6; }
+
+.badge { display: inline-block; margin-top: 8px; padding: 3px 14px; border-radius: 999px; background-color: rgba(255, 255, 255, 0.12); font-size: 14px; }
+.small { display: block; font-size: 14px; color: #cdbfe8; margin-bottom: 4px; }
+
+/* =============== CARDS =============== */
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+.card {
+  background-color: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-top: 5px solid #ff6b9d;
+  border-radius: 16px;
+  padding: 22px;
+  transition: transform 0.25s;
+}
+.card:hover { transform: translateY(-8px) rotate(-1deg); }
+.card p:last-child { margin-bottom: 0; }
+.role { font-weight: 500; margin-bottom: 8px; }
+
+/* every card gets its own colour */
+.c1 { border-top-color: #ff6b9d; } .c1 .role { color: #ff6b9d; }
+.c2 { border-top-color: #ffa94d; } .c2 .role { color: #ffa94d; }
+.c3 { border-top-color: #4be3b0; } .c3 .role { color: #4be3b0; }
+.c4 { border-top-color: #b794f6; } .c4 .role { color: #b794f6; }
+
+/* =============== SKILLS =============== */
+.skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+.skill { padding: 6px 0 6px 18px; border-left: 5px solid #ff6b9d; }
+.skill strong { display: block; font-family: Syne, Arial, sans-serif; font-size: 20px; }
+.skill span { color: #cdbfe8; }
+.s1 { border-left-color: #ff6b9d; }
+.s2 { border-left-color: #ffa94d; }
+.s3 { border-left-color: #4be3b0; }
+.s4 { border-left-color: #b794f6; }
+
+/* =============== FOOTER =============== */
+.footer {
+  max-width: 980px;
+  margin: 70px auto 0 auto;
+  padding: 24px 24px 40px 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 14px;
+  color: #cdbfe8;
+}
+.footer p { margin: 0; }
+
+/* =============== PHONE SCREENS =============== */
+@media (max-width: 720px) {
+  h2 { font-size: 32px; }
+  .typing { font-size: 20px; }
+  .blob { opacity: 0.35; }
+}
+
+/* Turn off movement for people who ask for it */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .blob, .name, .cursor { animation: none; }
+  .btn, .card { transition: none; }
+}
